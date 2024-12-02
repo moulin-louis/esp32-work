@@ -16,12 +16,16 @@ esp-backtrace = { version = "0.14.2", features = [
     "exception-handler",
     "panic-handler",
     "println",
+    "halt-cores",
+    "colors",
 ] }
 
-esp-hal = { version = "0.22.0", features = ["esp32"] }
-esp-println = { version = "0.12.0", features = ["esp32", "log"] }
+esp-hal = { version = "0.22.0", features = ["esp32", "log"] }
+esp-println = { version = "0.12.0", features = ["esp32", "log", "colors"] }
 log = { version = "0.4.21" }
 critical-section = "1.2.0"
+lcd-lcm1602-i2c = "0.3.0"
+esp-alloc = "0.5.0"
 
 [profile.dev]
 # Rust debug is too slow.
