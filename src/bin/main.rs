@@ -1,8 +1,6 @@
 #![no_std]
 #![no_main]
 
-use core::mem::MaybeUninit;
-
 use esp_alloc as _;
 use esp_backtrace as _;
 use esp_hal::delay::Delay;
@@ -69,7 +67,8 @@ fn main() -> ! {
         let distance = distance(&mut input_echo, &mut output_trig, &delay);
         lcd.clear().unwrap();
         lcd.write_str("distance = ").unwrap();
-        lcd.write_str(" cm\n").unwrap();
+        info!("distance = {}", distance);
+        lcd.write_str(" cm").unwrap();
         delay.delay(1000.millis());
     }
 }
